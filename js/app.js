@@ -29,6 +29,8 @@ Vue.component('calc-form', {
                 value: null,
                 weight: null,
             },);
+
+            window.scrollTo(0,document.body.scrollHeight);
         },
         deleteField: function (note) {
             if (this.notes.length === 1) {
