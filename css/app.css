@@ -1,6 +1,20 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
 body {
-    padding-top: 10vh;
-    padding-bottom: 130px;
+    position: relative;
+    margin: 0;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+    min-height: 100%;
 }
 
 .divider {
@@ -13,7 +27,8 @@ body {
 }
 
 .footer {
-    position: fixed;
+    position: absolute;
+    right: 0;
     left: 0;
     bottom: 0;
     width: 100%;
