@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+</head>
+<body style="padding-top: 10vh;">
+<div id="app">
+    <div class="container">
+        <calc-form inline-template>
+            <div>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <h1 class="text-muted">Wat moet ik halen?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <h3 class="text-muted">
+                                    Gemiddelde: {{ roundedAverage }}
+                                </h3>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <h3 class="text-muted">
+                                    Doel: {{ roundedGoal }}
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group col-md-6 col-12">
+                                        <strong>Gewenst Cijfer</strong>
+                                        <input type="number" class="form-control" placeholder="Cijfer" v-model="goal">
+                                    </div>
+                                    <div class="form-group col-md-6 col-12">
+                                        <strong>Weging Volgend Cijfer</strong>
+                                        <input type="number" class="form-control" placeholder="Weging" v-model="weight">
+                                    </div>
+                                </div>
+                                <form>
+                                    <strong>Cijfers</strong>
+                                    <div class="row" v-for="note in notes">
+                                        <div class="col-12 col-md-6">
+                                            <div class="form-group">
+                                                <input class="form-control" type="number" v-model="note.value"
+                                                       placeholder="Cijfer">
+                                            </div>
+                                        </div>
+                                        <div class="col-8 col-md-3">
+                                            <div class="form-group">
+                                                <input class="form-control" type="number" v-model="note.weight"
+                                                       placeholder="Weging">
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-3">
+                                            <div class="form-group">
+                                                <button class="btn btn-danger btn-block text-center"
+                                                        style="padding-left: 0; padding-right: 0;"
+                                                        @click.prevent="deleteField(note.index)"><i
+                                                        class="fa fa-times"></i></button>
+                                            </div>
+                                        </div>
+                                        <div style="height: 1px; width: 100%; margin-left: 15px; margin-right: 15px; background: #dae0e6; margin-bottom: 12px;"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button class="btn btn-primary btn-block" @click.prevent="addField">
+                                                Extra Cijfer
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </calc-form>
+    </div>
+</div>
+
+
+<script src="./js/app.js"></script>
+</body>
+</html>
