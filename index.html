@@ -5,16 +5,18 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Test</title>
+    <title>Wat moet ik halen? - stanjg</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
           integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="./css/app.css">
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 </head>
-<body style="padding-top: 10vh;">
+<body>
 <div id="app">
     <div class="container">
         <calc-form inline-template>
@@ -71,13 +73,12 @@
                                         </div>
                                         <div class="col-4 col-md-3">
                                             <div class="form-group">
-                                                <button class="btn btn-danger btn-block text-center"
-                                                        style="padding-left: 0; padding-right: 0;"
+                                                <button class="btn btn-danger btn-block text-center delete-button"
                                                         @click.prevent="deleteField(note.index)"><i
                                                         class="fa fa-times"></i></button>
                                             </div>
                                         </div>
-                                        <div style="height: 1px; width: 100%; margin-left: 15px; margin-right: 15px; background: #dae0e6; margin-bottom: 12px;"></div>
+                                        <div class="divider"></div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
@@ -93,6 +94,19 @@
                 </div>
             </div>
         </calc-form>
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="col-10 offset-1 flex">
+                <div class="flex-grow">
+                    © 2018 Stan Gabes
+                </div>
+                <div>
+                    <a href="https://github.com/stanjg/wat-moet-ik-halen/" class="footer-link" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/stan.jg/" class="footer-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
