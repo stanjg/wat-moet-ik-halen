@@ -71,9 +71,6 @@ Vue.component('calc-form', {
 
             // Loop through all notes and calculate the totalWeighted value and the totalWeight
             for (var i = 0; i < this.notes.length; i++) {
-                if (note.value === null || note.weight === null)
-                    continue;
-
                 totalWeighted += this.notes[i].value * this.notes[i].weight;
                 totalWeight += this.notes[i].weight * 1;
             }
