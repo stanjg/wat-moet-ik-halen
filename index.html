@@ -74,8 +74,10 @@
                                         <div class="col-4 col-md-3">
                                             <div class="form-group">
                                                 <button class="btn btn-danger btn-block text-center delete-button"
-                                                        @click.prevent="deleteField(note.index)"><i
-                                                        class="fa fa-times"></i></button>
+                                                        v-bind:disabled="notes.length <= 1"
+                                                        @click.prevent="deleteField(note.index)">
+                                                    <i class="fa fa-times"></i>
+                                                </button>
                                             </div>
                                         </div>
                                         <div class="divider"></div>
