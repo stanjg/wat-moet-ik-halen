@@ -1,5 +1,5 @@
 # Wat moet ik halen?
 
-Dit is een simpele demo om te laten zien wat je kan bereiken met een klein beetje VueJS.
+Bereken welk cijfer je moet halen om voldoende te staan.
 
 Live demo: https://cijfers.stanjg.dev/
